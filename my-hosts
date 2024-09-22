@@ -14,7 +14,7 @@
 :: firebaseinstallations.googleapis.com
 :: firebaselogging-pa.googleapis.com
 :: firebaseremoteconfig.googleapis.com
-:: firebaseremoteconfigrealtime.googleapis.com
+:: firebaseremoteconfigrealtime.:: .com
 :: get.geojs.io
 :: graph.facebook.com
 :: ihomip-inapps.appsflyersdk.com
@@ -45,3 +45,4 @@
 :: wallpaperapi.operacdn.com
 :: ws-oscore.opera-api.com
 :: yandex.ru
+:: vivo-smp-axmobility.eaqbr.com.br
