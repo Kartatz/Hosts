@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 curl \
 	--url 'https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/ultimate.txt' \
 	--url 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social-only/hosts' \
@@ -33,6 +35,7 @@ curl \
 	--url 'https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt' \
 	--url 'https://winhelp2002.mvps.org/hosts.txt' \
 	--url 'https://raw.githubusercontent.com/yous/YousList/master/hosts.txt' \
+	--url 'https://raw.githubusercontent.com/Kartatz/Hosts/refs/heads/master/my-hosts' \
 	--fail \
 	--silent \
 	--doh-url 'https://1.0.0.1/dns-query' \
@@ -44,6 +47,6 @@ curl \
 	| awk 'NF && !seen[$0]++' \
 	> 'hosts'
 
-python -B -u hosts.py
+python3.11 -B -u hosts.py
 
 mv './hosts2' './hosts'

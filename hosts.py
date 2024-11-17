@@ -1,6 +1,7 @@
 import asyncio
 import functools
 import socket
+import json
 
 import aiofiles
 
@@ -22,6 +23,8 @@ async def agetaddrinfo(host):
 	
 	res = None
 	
+	print("Checking for %s" % (host))
+	
 	loop = asyncio.get_running_loop()
 	
 	func = functools.partial(
@@ -34,6 +37,8 @@ async def agetaddrinfo(host):
 		res = await loop.run_in_executor(None, func)
 	except socket.gaierror:
 		pass
+	
+	print("res: %s" % str(res))
 	
 	return (host, res)
 
